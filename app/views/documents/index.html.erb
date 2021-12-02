@@ -1,0 +1,18 @@
+<div class="container">  
+
+  <div  class="card-body">
+    
+    <h2> Welcome to the selection session </h2>
+
+    <%= form_with(model: @new_document, url: documents_path) do |f| %>
+    <%= f.label 'Name of the file'%>
+    <%= f.text_field :namefile, required: true %>
+    <%= f.file_field :files, multiple: true, class: "btn btn-outline-success"  %>
+    <%= f.label 'Description'%>
+    <%= f.text_area :description %>
+    <br>
+    <%= f.submit class: "btn btn-outline-success"  %>
+    <% end %>
+  
+  </div>  
+</div>

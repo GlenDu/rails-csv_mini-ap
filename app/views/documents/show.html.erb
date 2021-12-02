@@ -1,0 +1,14 @@
+<h1>Documents#show</h1>
+
+<div>
+  <ul>
+    <li><%= @doc_show.files %></li>
+    <li><%= @doc_show.files.count %></li>
+    <li>id: <%= @doc_show.id %></li>
+    <li>attached:<%= @doc_show.files.attached? %></li>
+    <li><%= @doc_show.namefile %></li>
+    <li><%= @doc_show.description %></li>
+    <li><%= @doc_show.created_at %></li>
+    <li><%= @doc_show.updated_at %></li>
+  </ul>
+</div>
