@@ -1,2 +1,0 @@
-class FileFinder
-end

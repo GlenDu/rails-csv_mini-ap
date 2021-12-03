@@ -1,30 +1,19 @@
+require 'csv'
+
 class Parser
-
-  def initialize (col_select)
-    @col_select = col_select
+  
+ 
+  def col_select#(raw_data)
+    raw_data = Document.last.files.first.blob.download
+    CSV.parse(raw_data, :col_sep => ',') { |row| row}
   end
 
-  def call
-    select_column
-    parser
+  def testing
+    var = 1+2
   end
 
-  private
-
-    def select_column
-      p "Voici la liste des colones du document choisit"
-       refacto_col_name
-      p "choose les colones que tu veux selectionner"
-      @col_choice = gets.chomp.split(" ")
-    end
-
-    def refacto_col_name
-      p @col_select[0].to_h.keys.sort
-    end
-
-    def parser
-      @col_select.map(&:to_h).map do |hash|
-        hash.fetch_values(*@col_choice)
-      end
-    end
+  def parse_string
+   # arr_of_arrs = CSV.parse("CSV, attached_file_select, String") { |row| row}
+  end
+ 
 end
