@@ -1,15 +1,16 @@
 require 'csv'
 
 class Parser
-  
  
   def col_select#(raw_data)
     raw_data = Document.last.files.first.blob.download
-    CSV.parse(raw_data, :col_sep => ',') { |row| row}
+    #@col_names = CSV.parse(raw_data, :col_sep => ',') { |row| return row}
+    CSV.parse_line(raw_data)
   end
 
   def testing
     var = 1+2
+    return var
   end
 
   def parse_string
